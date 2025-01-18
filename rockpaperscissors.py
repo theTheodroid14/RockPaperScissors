@@ -20,7 +20,7 @@ print("Opponent chose: " + opponentsmove)
 
 def check():
     
-    if ourmove not in ["rock", "paper", "scissors"]:
+    if ourmove not in ["rock", "paper", "scissors"] or ourmove == "":
         print("Answer correctly (choose rock, paper, or scissors)")
         return  
     

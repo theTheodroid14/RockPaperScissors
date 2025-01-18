@@ -1,0 +1,53 @@
+import random
+import sys  
+
+def game() :
+    ourmove = input("Rock, Paper or Scissors? ").lower()
+
+
+    opponentsmoveint = random.randint(1, 3)
+
+    def pick():
+        global opponentsmove
+        if opponentsmoveint == 1:
+            opponentsmove = "rock"
+        elif opponentsmoveint == 2:
+            opponentsmove = "paper"
+        else:
+            opponentsmove = "scissors"
+
+    pick()
+
+    print("Opponent chose: " + opponentsmove)
+
+    def check():
+    
+        if ourmove not in ["rock", "paper", "scissors"] or ourmove == "":
+            print("Answer correctly (choose rock, paper, or scissors)")
+            return  
+    
+    # Check the answer for win/lose/tie outcome
+        if opponentsmove == "rock" and ourmove == "scissors":
+            print("You Lose!")
+        elif opponentsmove == "scissors" and ourmove == "paper":
+            print("You Lose!")
+        elif opponentsmove == "paper" and ourmove == "rock":
+            print("You Lose!")
+        elif opponentsmove == ourmove:  
+            print("It's a tie!")
+        else:
+            print("You win!")
+
+    check()
+
+    command = input("Game is finished Press Enter to restart! , if you want to close type x or close : ").lower()
+    if command == "" :
+        game()
+    elif command == "x" or command == "close" :
+        sys.exit(1)
+    else :
+        game()
+
+game()
+
+
